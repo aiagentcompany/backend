@@ -1,0 +1,29 @@
+backend/
+├── manage.py                            # Django CLI utility
+├── .env.example                         # Secrets and environment config
+├── requirements.txt                     # All dependencies
+├── gunicorn_config.py                   # (Optional) Gunicorn config
+│
+├── config/                              # Django project config
+│   ├── __init__.py
+│   ├── wsgi.py                          # WSGI entry for Gunicorn
+│   ├── asgi.py                          # ASGI entry for async support
+│   ├── urls.py                          # Root URL routing
+│   └── settings/                        # Organized settings
+│       ├── __init__.py
+│       ├── base.py                      # Shared settings
+│       ├── dev.py                       # Dev-specific overrides
+│       └── prod.py                      # Production overrides
+│
+├── accounts/                            # Auth app
+│   ├── __init__.py
+│   ├── admin.py                         # Register models in admin
+│   ├── apps.py                          # App config
+│   ├── models.py                        # Custom user model
+│   ├── serializers.py                   # Handles input/output logic
+│   ├── views.py                         # Handles HTTP requests
+│   ├── urls.py                          # Auth-related URL routes
+│   ├── tokens.py                        # Token generators for email actions
+│   ├── email_utils.py                   # Email sending logic
+│   ├── migrations/                      # DB schema versioning
+│       └── __init__.py
